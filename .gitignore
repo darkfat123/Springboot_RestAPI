@@ -27,7 +27,6 @@ target/
 /.nb-gradle/
 build/
 /src/main/resources/application.properties
-
 !**/src/main/**/build/
 !**/src/test/**/build/
 

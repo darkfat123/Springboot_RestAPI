@@ -39,6 +39,8 @@ public class InquiryCustomerController {
             if (!existingCustomers.isEmpty()) {
                 CustomerInfo existingCustomer = existingCustomers.get(0); 
                 logger.debug("existingCustomer: " + existingCustomer);
+                logger.debug("No format: " + existingCustomer.getRecordCreatedDate());
+                logger.debug("Formatted: " + DateUtils.format(existingCustomer.getRecordCreatedDate()));
                 response.setResponse("Success");
                 response.setFirstname(existingCustomer.getFirstname());
                 response.setLastname(existingCustomer.getLastname());
@@ -46,7 +48,7 @@ public class InquiryCustomerController {
                 response.setTelephone(existingCustomer.getTelephone());
                 response.setGender(existingCustomer.getGender());
                 response.setRecordCreatedDate(DateUtils.format(existingCustomer.getRecordCreatedDate()));
-                response.setRecordCreatedDate(DateUtils.format(existingCustomer.getRecordUpdatedDate()));
+                response.setRecordUpdatedDate(DateUtils.format(existingCustomer.getRecordUpdatedDate()));
 
                 return ResponseEntity.ok(response);
             } else {
